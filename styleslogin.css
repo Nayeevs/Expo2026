@@ -1,0 +1,293 @@
+:root {
+    --bg-main: #FDFDFD;         
+    --bg-body: #E1E8ED;         
+    --button-blue: #4A90E2;     
+    --button-gray: #94A3B8;     
+    --text-dark: #1A202C;       
+    --sidebar-text: #546E7A;    
+    --card-border: #cbd5e1;     
+    
+    --base-font-size: 16px;     
+}
+
+[data-theme="dark"] {
+    --bg-main: #1a2332;         
+    --bg-body: #0f172a;         
+    --button-blue: #4A90E2; 
+    --button-gray: #334155;     
+    --text-dark: #f8fafc;       
+    --sidebar-text: #e2e8f0;
+    --card-border: #475569;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--base-font-size);
+    scroll-behavior: smooth;
+    transition: font-size 0.2s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    display: flex;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-main);
+    border-right: 1px solid var(--card-border);
+    padding: 2rem 1rem;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    margin-bottom: 3rem;
+    padding-left: 0.5rem;
+}
+
+.brand-logo-img {
+    width: 80px;      
+    height: 80px;       
+    object-fit: contain;
+}
+
+.brand-text h2 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.brand-text p {
+    font-size: 0.85rem;
+    color: var(--sidebar-text);
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a .material-symbols-outlined {
+    margin-right: 12px;
+    font-size: 1.4rem;
+}
+
+.nav-links li.active a, .nav-links a:hover {
+    background-color: var(--bg-body);
+    color: var(--button-blue);
+}
+
+.main-content {
+    margin-left: 280px;
+    padding: 2rem 3rem;
+    width: calc(100% - 280px);
+    display: flex;
+    flex-direction: column;
+}
+
+.accessibility-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    background: var(--bg-main);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-acc {
+    background: var(--bg-body);
+    border: 1px solid var(--card-border);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-acc:hover {
+    filter: brightness(0.9);
+}
+
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: var(--bg-main); 
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+
+.reference-logo-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-reference-logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.login-reference-title {
+    font-size: 2.5rem;
+    color: #4A5568;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.custom-login-card {
+    background-color: var(--button-gray); 
+    border-radius: 35px;       
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 540px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.form-group-custom {
+    margin-bottom: 1.8rem;
+}
+
+.form-group-custom label {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark); 
+    margin-bottom: 0.6rem;
+    padding-left: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.form-group-custom input,
+.form-group-custom select {
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 50px; 
+    background-color: #ffffff;
+    color: #2D3748;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.form-group-custom select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232D3748'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group-custom input::placeholder {
+    color: #A0AEC0;
+    font-size: 0.95rem;
+}
+
+.form-group-custom input:focus,
+.form-group-custom select:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.5);
+}
+
+.btn-submit-custom {
+    width: 100%;
+    background-color: var(--button-blue);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit-custom:hover {
+    background-color: #357abd;
+}
+
+.btn-submit-custom:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 992px) {
+    body { 
+        flex-direction: column; 
+    }
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        padding: 1rem; 
+        border-right: none; 
+        border-bottom: 1px solid var(--card-border);
+    }
+    .sidebar-brand { 
+        margin-bottom: 1rem; 
+        justify-content: center; 
+    }
+    .nav-links { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+    .main-content { 
+        margin-left: 0; 
+        width: 100%; 
+        padding: 1rem; 
+    }
+    .custom-login-card { 
+        padding: 2rem 1.5rem; 
+        border-radius: 25px; 
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Care - Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="styleslogin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    <nav class="sidebar" aria-label="Menú principal">
+        <div class="sidebar-brand">
+            <img src="img/connectcare.png" alt="Logotipo Connect Care" class="brand-logo-img">
+            <div class="brand-text">
+                <h2>Connect Care</h2>
+                <p>Atención humana y profesional</p>
+            </div>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">home</span> Home</a></li>
+            <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">medical_services</span> Services</a></li>
+            <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">groups</span> About us</a></li>
+            <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">account_tree</span> Process</a></li>
+            <li><a href="#"><span class="material-symbols-outlined" aria-hidden="true">chat</span> Testimonials</a></li>
+            <li class="active"><a href="#"><span class="material-symbols-outlined" aria-hidden="true">login</span> Acceso</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <div class="accessibility-bar" aria-label="Controles de accesibilidad">
+            <button id="btn-darkmode" class="btn-acc" title="Alternar modo oscuro">
+                <span class="material-symbols-outlined">dark_mode</span> Cambiar Vista
+            </button>
+            <button id="btn-font-increase" class="btn-acc" title="Aumentar tamaño del texto">
+                <span class="material-symbols-outlined">zoom_in</span> A+
+            </button>
+            <button id="btn-font-decrease" class="btn-acc" title="Disminuir tamaño del texto">
+                <span class="material-symbols-outlined">zoom_out</span> A-
+            </button>
+        </div>
+
+        <div class="login-wrapper">
+            <div class="reference-logo-container">
+                <img src="img/connectcare.png" alt="Logotipo Connect Care Grande" class="login-reference-logo">
+                <h1 class="login-reference-title">Login</h1>
+            </div>
+
+            <article class="custom-login-card">
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    
+                    <div class="form-group-custom">
+                        <label for="reg-name">Escribe tu Nombre</label>
+                        <input type="text" id="reg-name" required placeholder="Escribe aquí">
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label for="reg-lastname">Escribe tus Apellidos</label>
+                        <input type="text" id="reg-lastname" required placeholder="Escribe aquí">
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label for="reg-dept">Selecciona tu Departamento de Residencia</label>
+                        <select id="reg-dept" required>
+                            <option value="" disabled selected hidden>Selecciona aquí</option>
+                            <option value="Ahuachapán">Ahuachapán</option>
+                            <option value="Cabañas">Cabañas</option>
+                            <option value="Chalatenango">Chalatenango</option>
+                            <option value="Cuscatlán">Cuscatlán</option>
+                            <option value="La Libertad">La Libertad</option>
+                            <option value="La Paz">La Paz</option>
+                            <option value="La Unión">La Unión</option>
+                            <option value="Morazán">Morazán</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="San Salvador">San Salvador</option>
+                            <option value="San Vicente">San Vicente</option>
+                            <option value="Santa Ana">Santa Ana</option>
+                            <option value="Sonsonate">Sonsonate</option>
+                            <option value="Usulután">Usulután</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label for="reg-doc-type">Selecciona el Tipo de Documento</label>
+                        <input type="text" id="reg-doc-type" required placeholder="Escribe aquí">
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label for="reg-doc-num">Escribe tu número de documento</label>
+                        <input type="text" id="reg-doc-num" required placeholder="Escribe aquí">
+                    </div>
+
+                    <button type="submit" class="btn-submit-custom">Enviar datos</button>
+                </form>
+            </article>
+        </div>
+       
+    </main>
+
+    <script src="scriptlogin.js"></script>
+</body>
+</html>
