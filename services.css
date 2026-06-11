@@ -1,0 +1,272 @@
+:root{
+    --bg-main:#ffffff;
+    --bg-body:#f4f7f9;
+    --primary-blue:#3b82f6;
+    --button-blue:#4a90e2;
+    --button-gray:#5c7286;
+    --primary-dark:#2c3e50;
+    --sidebar-text:#546e7a;
+    --card-border:#e2e8f0;
+}
+
+/* DARK MODE */
+body.dark-mode{
+    --bg-main:#1e293b;
+    --bg-body:#0f172a;
+    --primary-dark:#f8fafc;
+    --sidebar-text:#94a3b8;
+    --card-border:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg-body);
+    color:var(--primary-dark);
+    display:flex;
+    transition:.3s;
+}
+
+.sidebar{
+    width:280px;
+    background:var(--bg-main);
+    border-right:1px solid var(--card-border);
+    position:fixed;
+    height:100vh;
+    padding:2rem 1rem;
+}
+
+.brand-logo-img{
+    width:95px;
+    display:block;
+    margin:auto;
+}
+
+.nav-links{
+    list-style:none;
+    margin-top:2rem;
+}
+
+.nav-links a{
+    display:block;
+    padding:12px;
+    text-decoration:none;
+    color:var(--sidebar-text);
+    border-radius:8px;
+}
+
+.nav-links li.active a,
+.nav-links a:hover{
+    background:#eef4ff;
+    color:var(--primary-blue);
+}
+
+.main-content{
+    margin-left:280px;
+    padding:3rem;
+    width:100%;
+}
+
+.hero-banner{
+    background-image:
+    linear-gradient(to right,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1584515933487-779824d29309");
+
+    background-size:cover;
+    background-position:center;
+    min-height:400px;
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+
+    padding:4rem;
+    margin-bottom:3rem;
+}
+
+.hero-overlay-content h1{
+    color:white;
+    font-size:3.2rem;
+    margin-bottom:1rem;
+}
+
+.hero-description{
+    color:white;
+    font-size:1.2rem;
+    max-width:550px;
+}
+
+.intro-section{
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.intro-section h2{
+    font-size:2.2rem;
+    margin-bottom:1rem;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-bottom:4rem;
+}
+
+.service-card{
+    background:var(--bg-main);
+    padding:2rem;
+    border-radius:16px;
+    border:1px solid var(--card-border);
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+}
+
+.service-card span{
+    font-size:42px;
+    color:var(--primary-blue);
+}
+
+.service-card h3{
+    margin:15px 0;
+}
+
+.why-us{
+    margin-bottom:4rem;
+}
+
+.why-us h2,
+.process-section h2{
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+.why-container{
+    display:flex;
+    gap:20px;
+}
+
+.why-card{
+    background:var(--bg-main);
+    flex:1;
+    padding:2rem;
+    border-radius:16px;
+}
+
+.process-container{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.step{
+    background:var(--bg-main);
+    flex:1;
+    text-align:center;
+    padding:2rem;
+    border-radius:16px;
+}
+
+.step span{
+    color:var(--primary-blue);
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.cta-section{
+    background:var(--primary-blue);
+    color:white;
+    padding:4rem;
+    border-radius:16px;
+    text-align:center;
+    margin-top:4rem;
+}
+
+.btn-primary{
+    margin-top:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.btn-primary a{
+    text-decoration: none;
+    color:blue;
+}
+
+.theme-toggle {
+    margin-top: 2rem;
+}
+
+.theme-toggle button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.theme-toggle button:hover {
+    opacity: 0.9;
+}
+
+.sidebar,
+.service-card,
+.why-card,
+.step{
+    background:var(--bg-main);
+    transition:.3s;
+}
+
+.intro-section h2,
+.why-us h2,
+.process-section h2,
+.service-card h3,
+.why-card h3,
+.step h3{
+    color:var(--primary-dark);
+}
+
+.intro-section p,
+.service-card p,
+.why-card p,
+.hero-description{
+    color:var(--sidebar-text);
+}
+
+.nav-links a{
+    color:var(--sidebar-text);
+}
+
+.theme-toggle button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:var(--primary-blue);
+    color:white;
+    cursor:pointer;
+}
+
+.theme-toggle{
+    margin-top:2rem;
+}
+.theme-toggle button:hover{
+    transform:translateY(-2px);
+    opacity:.95;
+}
