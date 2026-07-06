@@ -1,0 +1,143 @@
+
+:root {
+    --bg-main: #ffffff;
+    --bg-body: #f4f7f9;
+    --primary-blue: #3b82f6;      
+    --button-blue: #4a90e2;      
+    --button-gray: #5c7286;       
+    --primary-dark: #2c3e50;
+    --sidebar-text: #546e7a;
+    --card-border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-footer {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 40px 20px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px; 
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--bg-body);
+    position: relative;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Lista de enlaces */
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    text-decoration:underline;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background-color: var(--sidebar-text);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--button-blue);
+    color: #1a1a1a;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333333;
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem; 
+    background-color: #333333;
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--button-blue);
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
