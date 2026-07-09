@@ -3,96 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidado Senior - Inicio</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>ConnectCare - Apoyo y Cuidado Senior</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
 </head>
 <body>
 
-    <nav class="sidebar" aria-label="Menú principal">
-        <div class="sidebar-brand">
-            <img src="img/Untitled design.png" alt="Logotipo Cuidado Senior" class="brand-logo-img">
-            <div class="brand-text">
-            </div>
-        </div>
-        
-        <ul class="nav-links">
-            <li class="active"><a href="#"><span class="material-symbols-outlined">home</span> Home</a></li>
-            <li><a href="services.html"><span class="material-symbols-outlined">medical_services</span> Services</a></li>
-            <li><a href="about-us.html"><span class="material-symbols-outlined">groups</span> About us</a></li>
-            <li><a href="#"><span class="material-symbols-outlined">account_tree</span> Process</a></li>
-            <li><a href="testimonios.html"><span class="material-symbols-outlined">chat</span> Testimonials</a></li>
-            <li><a href="contactanos.html"><span class="material-symbols-outlined">mail</span> Contact</a></li>
-        </ul>
-    </nav>
+    <a href="#contenido-principal" class="saltar-enlace">Saltar al contenido principal</a>
 
-    <main class="main-content">
+    <div class="accessibility-bar" aria-label="Herramientas de accesibilidad">
+        <button id="btn-zoom-in" aria-label="Aumentar tamaño del texto">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Disminuir tamaño del texto">A- Reduce text</button>
+    </div>
+
+    <header class="main-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <div class="navbar-brand">
+                <img src="img/Untitled design.png" alt="Logotipo oficial de ConnectCare" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="index.html" aria-current="page">
+                        <span class="material-symbols-outlined" aria-hidden="true">home</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="services.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">medical_services</span>Services
+                    </a>
+                </li>
+                <li>
+                    <a href="about-us.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">groups</span>About us
+                    </a>
+                </li>
+                <li>
+                    <a href="process.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">account_tree</span>Process
+                    </a>
+                </li>
+                <li>
+                    <a href="testimonials.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">chat</span>Testimonials
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">mail</span>Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" id="contenido-principal">
         
-        <header class="hero-banner">
+        <section class="hero-banner" aria-label="Introducción a ConnectCare">
             <div class="hero-overlay-content">
-                <h1>A heart for service, a<br>hand to hold</h1>
+                <h1>A heart to serve, a hand to hold</h1>
                 <p class="hero-description">
-                    Personalized support for a dignified and happy life.
+                    Personalized and professional support to ensure a dignified, happy, and safe life for our elderly.
                 </p>
                 <div class="hero-actions">
-                    <button class="btn btn-banner-blue" onclick="handleNavigation('servicios')">Our Services</button>
-                    <button class="btn btn-banner-gray" onclick="handleNavigation('cliente')">Information</button>
+                    <a href="services.html" class="btn btn-banner-blue">See services</a>
+                    <a href="about-us.html" class="btn btn-banner-gray">More information</a>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <section class="profiles-container" aria-label="Selección de perfil">
+        <section class="profiles-container" aria-label="Opciones de acceso rápido según tu perfil">
             
             <article class="card card-client">
-                <div class="card-icon">
-                    <span class="material-symbols-outlined">volunteer_activism</span>
+                <div>
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">volunteer_activism</span>
+                    </div>
+                    <h3>Are you looking for the ideal care?</h3>
+                    <p>Find the best medical support, daily assistance, and personalized home care for your loved ones with complete safety.</p>
                 </div>
-                <h3>¿Buscas el cuidado ideal?</h3>
-                <p>Encuentra el mejor acompañamiento médico, apoyo diario y atención personalizada a domicilio para tus seres queridos con total seguridad.</p>
-                <button class="btn btn-card-primary" onclick="handleNavigation('cliente')">Solicitar información</button>
+                <a href="contact.html" class="btn btn-card-primary">Request information</a>
             </article>
 
             <article class="card card-worker">
-                <div class="card-icon">
-                    <span class="material-symbols-outlined">work</span>
+                <div>
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">work</span>
+                    </div>
+                    <h3>Do you want to join the team?</h3>
+                    <p>Work as a professional caregiver or nurse. We offer flexible schedules, ongoing training, and a supportive work environment.</p>
                 </div>
-                <h3>¿Quieres ser parte del equipo?</h3>
-                <p>Únete como cuidador o enfermero profesional. Ofrecemos horarios flexibles, capacitación constante y un entorno laboral de apoyo mutuo.</p>
-                <button class="btn btn-card-secondary" onclick="handleNavigation('trabajador')">Quiero aplicar</button>
+                <a href="contact.html" class="btn btn-card-secondary">I want to apply</a>
             </article>
+            
         </section>
 
-        <section class="Services">
+        <section class="services-section" aria-labelledby="services-title">
             <div class="title">
-                <h2>Our services</h2>
+                <h2 id="services-title">Our Featured Services</h2>
             </div>
-            <article class="card card-information">
-                <div class="card-icon">
-                    <span class="material-symbols-outlined">person</span>
-                </div>
-                <h3>Daily assistance</h3>
-                <p>Únete como cuidador o enfermero profesional. Ofrecemos horarios flexibles, capacitación constante y un entorno laboral de apoyo mutuo.</p>
-            </article>
 
-            <article class="card card-information">
-                <div class="card-icon">
-                    <span class="material-symbols-outlined">Star</span>
-                </div>
-                <h3>¿Quieres ser parte del equipo?</h3>
-                <p>Únete como cuidador o enfermero profesional. Ofrecemos horarios flexibles, capacitación constante y un entorno laboral de apoyo mutuo.</p>
-            </article>
-            <article class="card card-information">
-                <div class="card-icon">
-                    <span class="material-symbols-outlined">favorite</span>
-                </div>
-                <h3>¿Quieres ser parte del equipo?</h3>
-                <p>Únete como cuidador o enfermero profesional. Ofrecemos horarios flexibles, capacitación constante y un entorno laboral de apoyo mutuo.</p>
-            </article>
+            <div class="services-grid">
+                
+                <article class="card card-information">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+                    </div>
+                    <h3>Daily attendance</h3>
+                    <p>Personalized support in daily household activities, personal hygiene, meals, and constant companionship.</p>
+                </article>
+
+                <article class="card card-information">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">star</span>
+                    </div>
+                    <h3>Specialized Care</h3>
+                    <p>Nurses trained in medication management, vital signs monitoring, and preventive healthcare.</p>
+                </article>
+                
+                <article class="card card-information">
+                    <div class="card-icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+                    </div>
+                    <h3>Emotional support</h3>
+                    <p>We promote mental and emotional well being through social activities, guided walks, and recreational activities.</p>
+                </article>
+                
+            </div>
         </section>
        
     </main>
 
+     <footer class="main-footer">
+    <div class="footer-container">
 
+        <div class="footer-column">
+            <h3>ConnectCare</h3>
+            <p>We provide compassionate and personalized care
+                tailored to the unique needs of every individual.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Useful links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+
+           <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Testimonials</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Follow us</h3>
+            <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+    </div>
+</footer>
+        
     <script src="index.js"></script>
 </body>
 </html>
