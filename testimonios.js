@@ -1,111 +1,137 @@
-const testimonials = [
+document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================
+    // 1. ACCESSIBILITY TOOLS CONTROL (ZOOM)
+    // ==========================================
+    const btnZoomIn = document.getElementById('btn-zoom-in');
+    const btnZoomOut = document.getElementById('btn-zoom-out');
+    let currentSize = 16; 
 
-    {
-        name: "María González",
-        stars: "★★★★★",
-        text: "Gracias a su equipo, mi madre recibe atención profesional, cercana y humana. Saber que está acompañada por personas comprometidas nos brinda una tranquilidad invaluable."
-    },
-
-    {
-        name: "Carlos Rodríguez",
-        stars: "★★★★★",
-        text: "El personal siempre estuvo disponible cuando más lo necesitábamos. Nos sentimos respaldados en todo momento."
-    },
-
-    {
-        name: "Laura Pérez",
-        stars: "★★★★★",
-        text: "Gran tranquilidad para nuestra familia. La calidad humana y profesional del equipo es excepcional."
-    },
-
-    {
-        name: "Ana Martínez",
-        stars: "★★★★★",
-        text: "La atención recibida superó nuestras expectativas. Siempre atentos y dispuestos a ayudar."
-    },
-
-    {
-        name: "José López",
-        stars: "★★★★★",
-        text: "Un acompañamiento constante que marcó una diferencia enorme en la calidad de vida de nuestro familiar."
-    }
-
-];
-
-const steps = document.querySelectorAll(".path-step");
-const card = document.querySelector(".testimonial-card");
-
-let currentIndex = 0;
-let autoSlider;
-
-function showTestimonial(index) {
-
-    card.classList.add("fade");
-
-    setTimeout(() => {
-
-        const activeStep = document.querySelector(".path-step.active");
-
-        if (activeStep) {
-            activeStep.classList.remove("active");
+    btnZoomIn.addEventListener('click', () => {
+        if (currentSize < 22) { 
+            currentSize += 2;
+            document.documentElement.style.fontSize = currentSize + 'px';
         }
-
-        steps[index].classList.add("active");
-
-        card.innerHTML = `
-            <div class="quote-icon">❝</div>
-
-            <h3>${testimonials[index].name}</h3>
-
-            <div class="stars">
-                ${testimonials[index].stars}
-            </div>
-
-            <p>
-                ${testimonials[index].text}
-            </p>
-        `;
-
-        card.classList.remove("fade");
-
-    }, 250);
-
-    currentIndex = index;
-}
-
-function startSlider() {
-
-    autoSlider = setInterval(() => {
-
-        currentIndex++;
-
-        if (currentIndex >= testimonials.length) {
-            currentIndex = 0;
-        }
-
-        showTestimonial(currentIndex);
-
-    }, 4000);
-
-}
-
-function restartSlider() {
-
-    clearInterval(autoSlider);
-    startSlider();
-
-}
-
-steps.forEach((step, index) => {
-
-    step.addEventListener("click", () => {
-
-        showTestimonial(index);
-        restartSlider();
-
     });
 
-});
+    btnZoomOut.addEventListener('click', () => {
+        if (currentSize > 12) { 
+            currentSize -= 2;
+            document.documentElement.style.fontSize = currentSize + 'px';
+        }
+    });
 
-showTestimonial(0);
-startSlider();
+    // ==========================================
+    // 2. DYNAMIC INTERACTIVE TESTIMONIAL SYSTEM
+    // ==========================================
+    const listaTestimonios = [
+        {
+            nombre: "Maria Gonzalez",
+            texto: "\"The care support my mother received exceeded all family expectations. Finding certified professionals with real empathy brought back our peace of mind instantly.\""
+        },
+        {
+            nombre: "Carlos Rodriguez",
+            texto: "\"Excellent monitoring and professional medication reminder routines. The staff remains highly punctual, kind, and completely respectful toward my grandfather.\""
+        },
+        {
+            nombre: "Laura Perez",
+            texto: "\"Thanks to ConnectCare, our grandmother safely preserves her home independence under dependable supervision. The customization profile plan process was fast.\""
+        },
+        {
+            nombre: "Ana Martinez",
+            texto: "\"Their reliable overnight care has been an exceptional blessing for us. Knowing a trained professional is guarding dad allows our family to rest peacefully.\""
+        },
+        {
+            nombre: "Jose Lopez",
+            texto: "\"Medical appointments and transportation routines are no longer an issue. Their logistics are completely safe, comfortable, and highly coordinated.\""
+        }
+    ];
+
+    const pasosLinea = document.querySelectorAll('.path-step');
+    const tarjetaDestino = document.getElementById('testimonial-card-target');
+    const barraProgreso = document.getElementById('progress-line');
+    
+    let activeIndex = 0;
+    let autoPlayTimer = null;
+
+    function cambiarTestimonio(nuevoIndex) {
+        if (nuevoIndex === activeIndex && tarjetaDestino.classList.contains('showing')) return;
+
+        // A) Outbound animation trigger
+        tarjetaDestino.classList.remove('showing');
+        tarjetaDestino.classList.add('fade-out');
+
+        // B) Update active states on profile buttons
+        pasosLinea.forEach((paso, idx) => {
+            if (idx === parseInt(nuevoIndex)) {
+                paso.classList.add('active');
+            } else {
+                paso.classList.remove('active');
+            }
+        });
+
+        // C) Update blue progress bar width proportionally
+        const porcentajeProgreso = (nuevoIndex / (pasosLinea.length - 1)) * 100;
+        if(barraProgreso) {
+            barraProgreso.style.width = `${porcentajeProgreso}%`;
+        }
+
+        // D) Wait for card slide-out animation to swap content smoothly
+        setTimeout(() => {
+            const datos = listaTestimonios[nuevoIndex];
+            tarjetaDestino.innerHTML = `
+                <p>${datos.texto}</p>
+                <h4>— ${datos.nombre}</h4>
+            `;
+
+            tarjetaDestino.classList.remove('fade-out');
+            tarjetaDestino.classList.add('showing');
+            
+            activeIndex = parseInt(nuevoIndex);
+        }, 300);
+    }
+
+    function iniciarAutoplay() {
+        autoPlayTimer = setInterval(() => {
+            let siguienteIndex = (activeIndex + 1) % listaTestimonios.length;
+            cambiarTestimonio(siguienteIndex);
+        }, 5000);
+    }
+
+    function detenerAutoplay() {
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    // Initialize default states
+    cambiarTestimonio(0);
+    iniciarAutoplay();
+
+    pasosLinea.forEach(paso => {
+        paso.addEventListener('click', () => {
+            detenerAutoplay(); // Stop auto-rotation once user interacts
+            const indexSeleccionado = paso.getAttribute('data-index');
+            cambiarTestimonio(indexSeleccionado);
+        });
+    });
+
+    // ==========================================
+    // 3. NEW: INTERACTIVE FAQ ACCORDION LOGIC
+    // ==========================================
+    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+    accordionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const currentItem = trigger.parentElement;
+            const isOpen = currentItem.classList.contains('open');
+
+            // Close all other items to look modern and orderly
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('open');
+            });
+
+            // Toggle current item state
+            if (!isOpen) {
+                currentItem.classList.add('open');
+            }
+        });
+    });
+});

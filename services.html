@@ -3,86 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Care - Services</title>
-
+    <title>ConnectCare - Services</title>
     <link rel="stylesheet" href="services.css">
+    <!-- Librerías de Fuentes e Iconos (Idénticas al index y contact) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
 
-       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 </head>
 <body>
 
-    <!-- SIDEBAR -->
+    <a href="#contenido-principal" class="saltar-enlace">Saltar al contenido principal</a>
 
-    <nav class="sidebar">
-
-        <div class="sidebar-brand">
-            <img src="img/Untitled design.png" alt="Logo" class="brand-logo-img">
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html"><span class="material-symbols-outlined">home</span> Home</a></li>
-
-            <li class="active">
-                <a href="services.html">
-                    <span class="material-symbols-outlined">medical_services</span>
-                    Services
-                </a>
-            </li>
-
-            <li><a href="about-us.html"><span class="material-symbols-outlined">groups</span> About Us</a></li>
-
-            <li><a href="#"><span class="material-symbols-outlined">account_tree</span> Process</a></li>
-
-            <li><a href="testimonios.html"><span class="material-symbols-outlined">chat</span> Testimonials</a></li>
-
-            <li><a href="contactanos.html"><span class="material-symbols-outlined">mail</span> Contact</a></li>
-        </ul>
-
-    <div class="theme-toggle">
-        <button id="darkModeBtn">
-         <span class="material-symbols-outlined">dark_mode</span>
-        Dark Mode
-        </button>
+    <!-- BARRA DE ACCESIBILIDAD -->
+    <div class="accessibility-bar" aria-label="Herramientas de accesibilidad">
+        <button id="btn-zoom-in" aria-label="Aumentar tamaño del texto">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Disminuir tamaño del texto">A- Reduce text</button>
     </div>
 
-    </nav>
+    <!-- NAVEGACIÓN COMPARTIDA -->
+    <header class="main-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <div class="navbar-brand">
+                <img src="img/Untitled design.png" alt="Logotipo oficial de ConnectCare" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">home</span>Home
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="services.html" aria-current="page">
+                        <span class="material-symbols-outlined" aria-hidden="true">medical_services</span>Services
+                    </a>
+                </li>
+                <li>
+                    <a href="about-us.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">groups</span>About us
+                    </a>
+                </li>
+                <li>
+                    <a href="process.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">account_tree</span>Process
+                    </a>
+                </li>
+                <li>
+                    <a href="testimonials.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">chat</span>Testimonials
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">mail</span>Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="main-content">
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content" id="contenido-principal">
 
         <!-- HERO -->
-
         <header class="hero-banner">
-
             <div class="hero-overlay-content">
-
                 <h1>Exceptional Care,<br>Every Day</h1>
-
                 <p class="hero-description">
-                    Professional support designed to help seniors
-                    live safely, comfortably, and independently.
+                    Professional support designed to help seniors live safely, comfortably, and independently.
                 </p>
-
             </div>
-
         </header>
 
         <!-- INTRO -->
-
         <section class="intro-section">
-
             <h2>Our Care Services</h2>
-
             <p>
-                We provide compassionate and personalized care
-                tailored to the unique needs of every individual.
+                We provide compassionate and personalized care tailored to the unique needs of every individual.
             </p>
-
         </section>
 
         <!-- SERVICES -->
-
         <section class="services-grid">
-
             <article class="service-card">
                 <span class="material-symbols-outlined">person</span>
                 <h3>Daily Assistance</h3>
@@ -118,89 +125,130 @@
                 <h3>Overnight Care</h3>
                 <p>Reliable supervision and assistance throughout the night.</p>
             </article>
-
         </section>
 
         <!-- WHY CHOOSE US -->
-
         <section class="why-us">
-
             <h2>Why Families Choose Us</h2>
-
             <div class="why-container">
-
                 <div class="why-card">
                     <h3>Experienced Caregivers</h3>
                     <p>Highly trained professionals dedicated to quality care.</p>
                 </div>
-
                 <div class="why-card">
                     <h3>24/7 Availability</h3>
                     <p>Support whenever your loved one needs assistance.</p>
                 </div>
-
                 <div class="why-card">
                     <h3>Personalized Plans</h3>
                     <p>Customized solutions for every situation.</p>
                 </div>
-
             </div>
-
         </section>
 
         <!-- PROCESS -->
-
         <section class="process-section">
-
             <h2>How It Works</h2>
-
             <div class="process-container">
-
                 <div class="step">
                     <span>01</span>
                     <h3>Consultation</h3>
                 </div>
-
                 <div class="step">
                     <span>02</span>
                     <h3>Assessment</h3>
                 </div>
-
                 <div class="step">
                     <span>03</span>
                     <h3>Care Plan</h3>
                 </div>
-
                 <div class="step">
                     <span>04</span>
                     <h3>Ongoing Support</h3>
                 </div>
-
             </div>
-
         </section>
 
         <!-- CTA -->
-
         <section class="cta-section">
-
             <h2>Ready to Get Started?</h2>
-
             <p>
-                Let us help you find the perfect care solution
-                for your loved one.
+                Let us help you find the perfect care solution for your loved one.
             </p>
-
             <button class="btn-primary">
-                <a href="contactanos.html">Contact Us Today</a>
+                <a href="contact.html">Contact Us Today</a>
             </button>
-
         </section>
 
     </main>
     
+    <!-- FOOTER COMPARTIDO -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>ConnectCare</h3>
+                <p>We provide compassionate and personalized care tailored to the unique needs of every individual.</p>
+            </div>
 
-    <script src="services.js"></script>
+            <div class="footer-column">
+                <h3>Useful links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVIDAD Y ACCESIBILIDAD CON JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnZoomIn = document.getElementById('btn-zoom-in');
+            const btnZoomOut = document.getElementById('btn-zoom-out');
+            let currentSize = 16; 
+
+            btnZoomIn.addEventListener('click', () => {
+                if (currentSize < 22) { 
+                    currentSize += 2;
+                    document.documentElement.style.fontSize = currentSize + 'px';
+                }
+            });
+
+            btnZoomOut.addEventListener('click', () => {
+                if (currentSize > 12) { 
+                    currentSize -= 2;
+                    document.documentElement.style.fontSize = currentSize + 'px';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
