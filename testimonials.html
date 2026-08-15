@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - ConnectCare</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar" aria-label="Accessibility controls">
+        <button id="btn-zoom-in" aria-label="Increase text size">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Reduce text size">A- Reduce text</button>
+    </div>
+
+    <!-- Clean Floating Pill Header -->
+    <header class="main-header">
+        <nav class="navbar pill-navbar" aria-label="Main navigation">
+            <div class="navbar-brand">
+                <img src="img/Connect Care Logo.png" alt="ConnectCare official logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li class="active"><a href="testimonials.html" aria-current="page">Testimonials</a></li>
+            </ul>
+
+            <div class="user-action">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="login.html" class="btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+        
+        <!-- Hero Banner -->
+        <section class="hero-banner" aria-label="Testimonials">
+            <div class="hero-overlay-content">
+                <h1>Real Stories from Real Families</h1>
+                <p class="hero-description">
+                    Discover how ConnectCare has made a difference in the lives of seniors and their families.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section with Avatar Selection -->
+        <section class="testimonials-section" aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title">What Families Say About Us</h2>
+            
+            <!-- Avatar Selection Row -->
+            <div class="testimonial-avatars">
+                <button class="avatar-btn active" data-testimonial="0" aria-label="Rosa María Delgado">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Rosa María</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="1" aria-label="Carlos Rodríguez">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Carlos</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="2" aria-label="Patricia López">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Patricia</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="3" aria-label="Jorge Martínez">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Jorge</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="4" aria-label="Francisca Sánchez">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Francisca</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="5" aria-label="Miguel Hernández">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Miguel</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="6" aria-label="Ana Vargas">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">Ana</p>
+                </button>
+                <button class="avatar-btn" data-testimonial="7" aria-label="David González">
+                    <div class="avatar-circle">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <p class="avatar-name">David</p>
+                </button>
+            </div>
+
+            <!-- Testimonial Display -->
+            <div class="testimonial-display">
+                <article class="testimonial-item active" data-id="0">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "My mother was getting increasingly isolated, but since Elena started caring for her, she's like a new person! The professionalism and genuine care Elena shows is exactly what we needed. Thank you ConnectCare!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Rosa María Delgado</h4>
+                            <p>Daughter of María (82)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="1">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Finding the right caregiver can be stressful, but ConnectCare made it easy. The process was transparent, the caregivers were thoroughly vetted, and my father is in the best hands. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Son of Antonio (78)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="2">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "After Francisco's surgery, he needed professional care. The team at ConnectCare understood his specific needs and matched him with Carmen, who provided exceptional post-recovery support. We're so grateful!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Patricia López</h4>
+                            <p>Wife of Francisco (81)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="3">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The 24/7 support from ConnectCare is incredible. Whether it's scheduling adjustments or emergency support, they're always there. My mother gets excellent care, and I have peace of mind. Best decision ever!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Jorge Martínez</h4>
+                            <p>Son of Teresa (79)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="4">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Finding someone to care for my mother with cognitive challenges was daunting, but the team at ConnectCare was patient and understanding. They matched her with someone who has the perfect temperament and expertise!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Francisca Sánchez</h4>
+                            <p>Daughter of Isabel (85)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="5">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The quality of caregivers on ConnectCare is outstanding. Not only do they provide excellent physical care, but they also offer genuine companionship. My father looks forward to their visits every day!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Miguel Hernández</h4>
+                            <p>Son of Enrique (76)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="6">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "My grandmother is in good hands with ConnectCare. The care is professional, the pricing is transparent, and the support team is always helpful. This is exactly what we were looking for!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>Ana Vargas</h4>
+                            <p>Granddaughter of Carmen (83)</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="testimonial-item" data-id="7">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "ConnectCare gave us options and flexibility when we needed it most. The platform is user-friendly, and the caregivers are true professionals. We recommend them to everyone!"
+                        </p>
+                        <div class="testimonial-author">
+                            <h4>David González</h4>
+                            <p>Husband of Silvia (77)</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Caregiver Testimonials Section -->
+        <section class="caregiver-testimonials-section">
+            <h2>From Our Caregivers</h2>
+            <div class="caregiver-testimonials-grid">
+                <div class="caregiver-testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>Elena Ruiz</h3>
+                            <p class="testimonial-role">Professional Caregiver</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "ConnectCare treated me professionally from day one. They value caregivers and ensure we're well-supported. I love the families I work with and feel appreciated for the work I do. It's more than just a job – it's a calling!"
+                    </p>
+                </div>
+
+                <div class="caregiver-testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>Juan Córdoba</h3>
+                            <p class="testimonial-role">Professional Caregiver</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "The support and training provided by ConnectCare are exceptional. They make sure we have everything we need to deliver excellent care. The platform makes communication with families seamless!"
+                    </p>
+                </div>
+
+                <div class="caregiver-testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>María Castillo</h3>
+                            <p class="testimonial-role">Professional Caregiver</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Working with ConnectCare has been the best career decision I made. The families are wonderful, the pay is fair, and there's genuine care for caregiver wellbeing. I'm proud to be part of this team!"
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>4.9 ★</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Satisfied Families</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Recommendation Rate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Join Our Community</h2>
+            <p>Be part of the hundreds of families who trust ConnectCare for quality senior care.</p>
+            <a href="services.html" class="btn btn-banner-blue">Find Your Caregiver Today</a>
+        </section>
+       
+    </main>
+
+    <!-- Clean Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>ConnectCare</h3>
+                <p>We provide compassionate and personalized care tailored to the unique needs of every individual.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+        </div>
+    </footer>
+        
+    <script src="index.js"></script>
+</body>
+</html>

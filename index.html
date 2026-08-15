@@ -3,9 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ConnectCare - Senior Support & Care Services</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
+
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar" aria-label="Accessibility controls">
+        <button id="btn-zoom-in" aria-label="Increase text size">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Reduce text size">A- Reduce text</button>
+    </div>
+
+    <!-- Clean Floating Pill Header -->
+    <header class="main-header">
+        <nav class="navbar pill-navbar" aria-label="Main navigation">
+            <div class="navbar-brand">
+                <img src="img/Connect Care Logo.png" alt="ConnectCare official logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="active"><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+
+            <div class="user-action">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="login.html" class="btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+        
+        <!-- Revolutionary Hero Section -->
+        <section class="hero-section" aria-label="Welcome to ConnectCare">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Care That Feels Like Family</h1>
+                    <p class="hero-subtitle">
+                        Professional caregivers who genuinely care. Find trusted support for your loved ones in minutes.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="services.html" class="btn btn-primary btn-lg">Discover Our Caregivers</a>
+                        <a href="about-us.html" class="btn btn-secondary btn-lg">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-number"><span class="counter" data-target="500" data-suffix="+">0</span></span>
+                            <span class="stat-label">Families Served</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">4.9★</span>
+                            <span class="stat-label">Highly Rated</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-heart"></i>
+                            <span>Compassionate</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Verified</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose ConnectCare -->
+        <section class="highlights-section" aria-labelledby="highlights-title">
+            <h2 id="highlights-title">Why Families Choose ConnectCare</h2>
+            <div class="highlights-grid">
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Verified Caregivers</h3>
+                    <p>Every caregiver is thoroughly background-checked and certified. Your peace of mind is our priority.</p>
+                </article>
+
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>From hourly visits to live-in care, choose the arrangement that works perfectly for your family.</p>
+                </article>
+
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Perfect Matching</h3>
+                    <p>We match caregivers based on personality, skills, and your loved one's unique needs.</p>
+                </article>
+
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Always Available</h3>
+                    <p>24/7 support team ready to help with questions, adjustments, or any emergencies.</p>
+                </article>
+
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Platform</h3>
+                    <p>Real-time updates, secure messaging, and complete control over your care journey.</p>
+                </article>
+
+                <article class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. Know exactly what you're paying for with flexible payment options.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="process-pathway-section" aria-labelledby="process-title">
+            <div class="section-badge">Simple & Fast</div>
+            <h2 id="process-title">Find Care in 3 Simple Steps</h2>
+            
+            <div class="pathway-grid">
+                <article class="pathway-card">
+                    <div class="step-number">1</div>
+                    <h3>Tell Us</h3>
+                    <p>Describe your loved one's needs and preferences in a quick assessment.</p>
+                </article>
+
+                <article class="pathway-card">
+                    <div class="step-number">2</div>
+                    <h3>Match</h3>
+                    <p>Browse vetted caregivers perfectly suited to your family's requirements.</p>
+                </article>
+
+                <article class="pathway-card">
+                    <div class="step-number">3</div>
+                    <h3>Connect</h3>
+                    <p>Start care immediately with 24/7 support at your fingertips.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Social Proof - Quick Win Section -->
+        <section class="quick-win-section">
+            <div class="quick-win-content">
+                <h2>What Our Families Say</h2>
+                <div class="quote-carousel">
+                    <blockquote class="quote-item">
+                        <p>"ConnectCare gave us peace of mind. The caregiver they matched with our mother is absolutely wonderful."</p>
+                        <footer>— Maria, Daughter</footer>
+                    </blockquote>
+                    <blockquote class="quote-item">
+                        <p>"The process was so easy and the support team was incredibly helpful every step of the way."</p>
+                        <footer>— Carlos, Son</footer>
+                    </blockquote>
+                    <blockquote class="quote-item">
+                        <p>"Finally found professional care that actually cares. Highly recommend to anyone looking for quality support."</p>
+                        <footer>— Patricia, Family Member</footer>
+                    </blockquote>
+                </div>
+                <div class="quote-nav">
+                    <button class="quote-dot active" aria-label="Quote 1"></button>
+                    <button class="quote-dot" aria-label="Quote 2"></button>
+                    <button class="quote-dot" aria-label="Quote 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="final-cta-section">
+            <h2>Ready to Find Quality Care?</h2>
+            <p>Join hundreds of families who trust ConnectCare for compassionate, professional support.</p>
+            <a href="services.html" class="btn btn-primary btn-lg">Get Started Today</a>
+        </section>
+       
+    </main>
+
+    <!-- Clean Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>ConnectCare</h3>
+                <p>We provide compassionate and personalized care tailored to the unique needs of every individual.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+        </div>
+    </footer>
+        
+    <script src="index.js"></script>
 </body>
 </html>

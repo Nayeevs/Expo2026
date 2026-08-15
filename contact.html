@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ConnectCare</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar" aria-label="Accessibility controls">
+        <button id="btn-zoom-in" aria-label="Increase text size">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Reduce text size">A- Reduce text</button>
+    </div>
+
+    <!-- Clean Floating Pill Header -->
+    <header class="main-header">
+        <nav class="navbar pill-navbar" aria-label="Main navigation">
+            <div class="navbar-brand">
+                <img src="img/Untitled design.png" alt="ConnectCare official logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li class="active"><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+
+            <div class="user-action">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="login.html" class="btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content" id="main-content">
+        
+        <!-- Hero Banner -->
+        <section class="hero-banner" aria-label="Contact Us">
+            <div class="hero-overlay-content">
+                <h1>Get in Touch</h1>
+                <p class="hero-description">
+                    We're here to answer your questions and help you every step of the way.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="contact-info-section">
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Available 24/7 for emergencies and inquiries</p>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>We'll respond within 24 hours</p>
+                    <a href="mailto:info@connectcare.com">info@connectcare.com</a>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Professional office in your city</p>
+                    <a href="#">Find Our Locations</a>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Office Hours</h3>
+                    <p>Monday to Friday: 9 AM - 6 PM</p>
+                    <p>Saturday: 10 AM - 4 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="form-container">
+                <h2>Send us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="services">Services Question</option>
+                            <option value="caregiver">Become a Caregiver</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-banner-blue">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Quick Answers</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How can I become a caregiver?</h3>
+                    <p>We're always looking for compassionate caregivers. Apply through our platform, complete our screening process, and join our team of professionals dedicated to senior care.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you operate in my area?</h3>
+                    <p>ConnectCare operates in multiple cities. Contact us to confirm service availability in your location.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I need emergency care?</h3>
+                    <p>Our emergency response team is available 24/7. Call our emergency hotline for immediate assistance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I report a concern?</h3>
+                    <p>We take all concerns seriously. Contact our support team immediately through phone, email, or our online support portal.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I schedule a consultation?</h3>
+                    <p>Absolutely! We offer free, no-obligation consultations to discuss your care needs. Contact us to schedule yours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are your cancellation policies?</h3>
+                    <p>Our flexible cancellation policies allow changes with minimal notice. Review our terms or contact support for details.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Start Your Care Journey Today</h2>
+            <p>Whether you're looking for care or want to provide it, we're here to help.</p>
+            <div class="cta-buttons">
+                <a href="services.html" class="btn btn-banner-blue">Find a Caregiver</a>
+                <a href="#contact-form" class="btn btn-banner-blue">Become a Caregiver</a>
+            </div>
+        </section>
+       
+    </main>
+
+    <!-- Clean Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>ConnectCare</h3>
+                <p>We provide compassionate and personalized care tailored to the unique needs of every individual.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Join as Caregiver</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+        </div>
+    </footer>
+        
+    <script src="index.js"></script>
+</body>
+</html>
