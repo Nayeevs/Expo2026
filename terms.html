@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - ConnectCare</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="terms-page">
+    <div class="accessibility-bar" aria-label="Accessibility controls">
+        <button id="btn-zoom-in" aria-label="Increase text size">A+ Increase text</button>
+        <button id="btn-zoom-out" aria-label="Reduce text size">A- Reduce text</button>
+    </div>
+
+    <header class="main-header">
+        <nav class="navbar pill-navbar" aria-label="Main navigation">
+            <div class="navbar-brand">
+                <img src="img/Connect Care Logo.png" alt="ConnectCare official logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h2>ConnectCare</h2>
+                    <span>Senior support</span>
+                </div>
+            </div>
+
+            <div class="user-action">
+                <a href="index.html" class="btn-login">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="terms-main">
+        <div class="terms-shell">
+            <div class="terms-header">
+                <div class="highlight-icon">
+                    <i class="fas fa-file-contract" aria-hidden="true"></i>
+                </div>
+                <h1>Terms & Conditions</h1>
+                <p>Please read these terms carefully before continuing to the login process.</p>
+            </div>
+
+            <div class="terms-card" aria-live="polite">
+                <h2>1. Introduction</h2>
+                <p>Welcome to ConnectCare. These Terms and Conditions govern the access, use, and participation in the services offered through our platform, including the connection between families, caregivers, and care recipients.</p>
+
+                <h2>2. Acceptance of Terms</h2>
+                <p>By accessing or using the ConnectCare platform, the User expressly acknowledges that they have read, understood, and agree to be bound by these Terms and Conditions. If the User does not agree, they must not continue to use the platform.</p>
+
+                <h2>3. Eligibility</h2>
+                <p>To access and use our services, the User must be at least 18 years of age and possess the legal capacity to enter into a valid agreement under the applicable jurisdiction.</p>
+
+                <h2>4. Description of Services</h2>
+                <p>ConnectCare acts as a digital intermediary that facilitates the connection between families and qualified caregivers, as well as the coordination of care services. The final care relationship is established directly between the family or care recipient and the caregiver, subject to the terms and conditions of the service agreement.</p>
+
+                <h2>5. User Responsibilities</h2>
+                <ul>
+                    <li>Provide truthful, complete, and current information during registration and service use.</li>
+                    <li>Use the platform exclusively for lawful purposes and in accordance with these Terms.</li>
+                    <li>Respect the confidentiality, dignity, and rights of other users, caregivers, and care recipients.</li>
+                </ul>
+
+                <h2>6. Privacy and Data Protection</h2>
+                <p>ConnectCare will manage personal data in accordance with applicable privacy laws and internal data protection policies. Information provided through the platform will be used solely to provide, improve, and secure the services offered.</p>
+
+                <h2>7. Service Fees and Commission</h2>
+                <p>ConnectCare charges a company commission of 15% for each hour worked by the caregiver or service provider. This commission applies to the hourly rate agreed for the service and represents the fee retained by ConnectCare for providing the platform, coordination services, and operational support.</p>
+                <p>For example, if the agreed hourly rate is $15.00, the company commission will be 15% of that amount, equivalent to $2.25 per hour. The remaining balance, $12.75, will correspond to the caregiver's compensation for the services performed.</p>
+                <p>All fees, payment conditions, and billing arrangements will be disclosed clearly before the service begins. ConnectCare reserves the right to modify pricing policies upon prior notice to the User.</p>
+
+                <h2>8. Access to Microphone, Camera, and Communication Tools</h2>
+                <p>To access certain accessibility, monitoring, and communication features, the User agrees to enable access to the device microphone and camera when required for live support, caregiver verification, and real-time communication.</p>
+                <p>These features may be used for live check-ins, remote supervision, quality assurance, and verification that the caregiver is providing the agreed care to the patient or care recipient.</p>
+                <p>ConnectCare may also provide AI-assisted features that can respond to spoken instructions, offer guidance, and direct the User to relevant sections or pages within the platform. Such tools are intended to enhance accessibility and simplify navigation; however, they do not replace professional judgment, caregiver responsibility, or emergency medical evaluation when required.</p>
+                <p>Additionally, the platform may allow voice communication, video calls, and standard phone calls between Users, caregivers, family members, and support staff. By accepting these Terms, the User consents to the use of these communication tools for service coordination, supervision, and support.</p>
+
+                <h2>9. Limitation of Liability</h2>
+                <p>ConnectCare shall not be liable for damages, losses, or claims arising from the use of care services, delays, interruptions, failures of third-party systems, or actions performed by caregivers or other service providers outside the direct control of ConnectCare.</p>
+
+                <h2>10. Modifications to the Terms</h2>
+                <p>ConnectCare reserves the right to amend, revise, or update these Terms and Conditions at any time. Continued use of the platform after such modification constitutes acceptance of the revised Terms.</p>
+
+                <h2>11. Contact Information</h2>
+                <p>For questions, concerns, or requests related to these Terms and Conditions, the User may contact the ConnectCare support team through the communication channels available on the website.</p>
+            </div>
+
+            <div class="terms-acceptance">
+                <label class="terms-checkbox" for="accept-terms-checkbox">
+                    <input type="checkbox" id="accept-terms-checkbox">
+                    <span>I accept the Terms & Conditions</span>
+                </label>
+            </div>
+
+            <div class="terms-actions">
+                <button type="button" class="btn btn-primary" id="login-btn" disabled>Go to Log In</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        const acceptTermsCheckbox = document.getElementById('accept-terms-checkbox');
+        const loginButton = document.getElementById('login-btn');
+
+        function updateLoginButtonState() {
+            if (!acceptTermsCheckbox || !loginButton) {
+                return;
+            }
+
+            const isAccepted = acceptTermsCheckbox.checked;
+            loginButton.disabled = !isAccepted;
+            loginButton.setAttribute('aria-disabled', String(!isAccepted));
+        }
+
+        if (acceptTermsCheckbox && loginButton) {
+            acceptTermsCheckbox.addEventListener('change', updateLoginButtonState);
+            loginButton.addEventListener('click', function () {
+                if (!acceptTermsCheckbox.checked) {
+                    return;
+                }
+                window.location.href = 'login.html';
+            });
+            updateLoginButtonState();
+        }
+    </script>
+</body>
+</html>

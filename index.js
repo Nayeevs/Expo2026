@@ -69,7 +69,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 3. TESTIMONIALS CAROUSEL
+    // 3. SCROLL REVEAL ANIMATION
+    // ==========================================
+    const revealElements = document.querySelectorAll('section, article, .trust-item, .stat-item, .hero-text, .hero-cta, .hero-stats, .final-cta-section');
+
+    revealElements.forEach((element, index) => {
+        if (element.closest('.accessibility-bar') || element.closest('.main-header')) {
+            return;
+        }
+
+        element.classList.add('reveal-on-scroll');
+        element.style.transitionDelay = `${Math.min(index * 90, 350)}ms`;
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach((element) => {
+        if (element.classList.contains('reveal-on-scroll')) {
+            revealObserver.observe(element);
+        }
+    });
+
+    // ==========================================
+    // 4. TESTIMONIALS CAROUSEL
     // ==========================================
     const dots = document.querySelectorAll('.quote-dot');
     const quotes = document.querySelectorAll('.quote-item');
@@ -104,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 4. ANIMATED COUNTERS
+    // 5. ANIMATED COUNTERS
     // ==========================================
     const counters = document.querySelectorAll('.counter');
     let hasAnimated = false;
@@ -153,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 5. TESTIMONIALS PAGE - AVATAR SELECTION
+    // 6. TESTIMONIALS PAGE - AVATAR SELECTION
     // ==========================================
     const avatarBtns = document.querySelectorAll('.avatar-btn');
     const testimonialItems = document.querySelectorAll('.testimonial-item');
