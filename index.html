@@ -3,92 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConnectCare - Apoyo y Cuidado Senior</title>
+    <title>ConnectCare - Senior Support & Care</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <video id="head-video" autoplay playsinline 
+       style="display: none; position: fixed; bottom: 20px; left: 20px; width: 160px; height: 120px; border-radius: 10px; border: 2px solid #3b82f6; object-fit: cover; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transform: scaleX(-1);"></video>
 
-    <a href="#contenido-principal" class="saltar-enlace">Saltar al contenido principal</a>
+    <a href="#main-content" class="saltar-enlace" data-es="Saltar al contenido principal" data-en="Skip to main content">Saltar al contenido principal</a>
 
-    <div class="accessibility-bar" aria-label="Herramientas de accesibilidad">
-        <button id="btn-zoom-in" aria-label="Aumentar tamaño del texto">A+ Increase text</button>
-        <button id="btn-zoom-out" aria-label="Disminuir tamaño del texto">A- Reduce text</button>
+    <button id="accessibility-toggle" class="accessibility-btn" aria-label="Menu de accesibilidad" aria-expanded="false">
+        <span class="material-symbols-outlined" aria-hidden="true">accessibility</span>
+    </button>
+
+    <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+        <div class="acc-header">
+            <h3 data-es="Accesibilidad" data-en="Accessibility">Accesibilidad</h3>
+            <button id="acc-close" class="acc-close-btn" aria-label="Cerrar panel">&times;</button>
+        </div>
+
+        <div class="acc-options-list">
+            <button id="btn-dark-mode" class="acc-option-btn">
+                <span data-es="Modo Oscuro" data-en="Dark Mode">Modo Oscuro</span>
+                <span id="dark-status" class="acc-status">OFF</span>
+            </button>
+
+            <button id="btn-high-contrast" class="acc-option-btn">
+                <span data-es="Alto Contraste" data-en="High Contrast">Alto Contraste</span>
+                <span id="contrast-status" class="acc-status">OFF</span>
+            </button>
+
+            <button id="btn-toggle-font" class="acc-option-btn">
+                <span data-es="Tamaño Texto" data-en="Font Size">Tamaño Texto</span>
+                <span id="font-size-indicator" class="acc-status active-blue">16px</span>
+            </button>
+
+            <button id="btn-screen-reader" class="acc-option-btn">
+                <span data-es="Lector de Pantalla" data-en="Screen Reader">Lector de Pantalla</span>
+                <span id="reader-status" class="acc-status">OFF</span>
+            </button>
+
+            <button id="btn-language" class="acc-option-btn">
+                <span data-es="Idioma" data-en="Language">Idioma</span>
+                <span id="lang-indicator" class="acc-status active-blue">EN</span>
+            </button>
+
+            <button id="btn-voice-commands" class="acc-option-btn">
+                <span data-es="Comandos por Voz" data-en="Voice Commands">Comandos por Voz</span>
+                <span id="voice-status" class="acc-status">OFF</span>
+            </button>
+
+            <button id="btn-head-control" class="acc-option-btn">
+                <span data-es="Control por Cabeza" data-en="Head Control">Control por Cabeza</span>
+                <span id="head-status" class="acc-status">OFF</span>
+            </button>
+        </div>
     </div>
 
     <header class="main-header">
         <nav class="navbar" aria-label="Navegación principal">
             <div class="navbar-brand">
-                <img src="img/Untitled design.png" alt="Logotipo oficial de ConnectCare" class="brand-logo-img">
+                <img src="img/LogoConnectCare.png" alt="Logotipo de ConnectCare con diseño para modo claro" data-es="Logotipo de ConnectCare con diseño para modo claro" data-en="ConnectCare logo for light mode" class="brand-logo-img logo-light">
+                <img src="img/LogoEnModoOscuro.png" alt="Logotipo de ConnectCare con diseño para modo oscuro" data-es="Logotipo de ConnectCare con diseño para modo oscuro" data-en="ConnectCare logo for dark mode" class="brand-logo-img logo-dark">
+                
                 <div class="brand-text">
                     <h2>ConnectCare</h2>
-                    <span>Senior support</span>
+                    <span data-es="Apoyo para Adultos Mayores" data-en="Senior Support">Apoyo para Adultos Mayores</span>
                 </div>
             </div>
             
             <ul class="nav-links">
                 <li class="active">
                     <a href="index.html" aria-current="page">
-                        <span class="material-symbols-outlined" aria-hidden="true">home</span>Home
-                    </a>
-                </li>
-                <li>
-                    <a href="services.html">
-                        <span class="material-symbols-outlined" aria-hidden="true">medical_services</span>Services
-                    </a>
-                </li>
-                <li>
-                    <a href="about-us.html">
-                        <span class="material-symbols-outlined" aria-hidden="true">groups</span>About us
-                    </a>
-                </li>
-                <li>
-                    <a href="process.html">
-                        <span class="material-symbols-outlined" aria-hidden="true">account_tree</span>Process
-                    </a>
-                </li>
-                <li>
-                    <a href="testimonials.html">
-                        <span class="material-symbols-outlined" aria-hidden="true">chat</span>Testimonials
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        <span class="material-symbols-outlined" aria-hidden="true">mail</span>Contact
+                        <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main class="main-content" id="contenido-principal">
-        
-        <section class="hero-banner" aria-label="Introducción a ConnectCare">
+    <main class="main-content" id="main-content">
+        <!-- HERO BANNER -->
+        <section class="hero-banner" tabindex="0">
             <div class="hero-overlay-content">
-                <h1>A heart to serve, a hand to hold</h1>
-                <p class="hero-description">
-                    Personalized and professional support to ensure a dignified, happy, and safe life for our elderly.
+                <h1 data-es="Un corazón para servir, una mano para sostener" data-en="A heart to serve, a hand to hold">Un corazón para servir, una mano para sostener</h1>
+                <p class="hero-description" data-es="Soporte personalizado y profesional para garantizar una vida digna, feliz y segura a nuestros adultos mayores." data-en="Personalized and professional support to ensure a dignified, happy, and safe life for our seniors.">
+                    Soporte personalizado y profesional para garantizar una vida digna, feliz y segura a nuestros adultos mayores.
                 </p>
                 <div class="hero-actions">
-                    <a href="services.html" class="btn btn-banner-blue">See services</a>
-                    <a href="about-us.html" class="btn btn-banner-gray">More information</a>
+                    <a href="services.html" class="btn btn-banner-blue" data-es="Ver Servicios" data-en="View Services">Ver Servicios</a>
+                    <a href="#about-us-section" class="btn btn-banner-gray" data-es="Más Información" data-en="More Info">Más Información</a>
                 </div>
             </div>
         </section>
 
-        <section class="profiles-container" aria-label="Opciones de acceso rápido según tu perfil">
-            
+        <!-- TARJETAS DE ACCESO RÁPIDO -->
+        <section class="profiles-container">
             <article class="card card-client">
                 <div>
                     <div class="card-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">volunteer_activism</span>
                     </div>
-                    <h3>Are you looking for the ideal care?</h3>
-                    <p>Find the best medical support, daily assistance, and personalized home care for your loved ones with complete safety.</p>
+                    <h3 data-es="¿Buscas la atención ideal?" data-en="Looking for the ideal care?">¿Buscas la atención ideal?</h3>
+                    <p data-es="Encuentra el mejor soporte médico, asistencia diaria y cuidado personalizado en el hogar para tus seres queridos." data-en="Find the best medical support, daily assistance, and personalized home care for your loved ones.">
+                        Encuentra el mejor soporte médico, asistencia diaria y cuidado personalizado en el hogar para tus seres queridos.
+                    </p>
                 </div>
-                <a href="contact.html" class="btn btn-card-primary">Request information</a>
+                <a href="contact.html" class="btn btn-card-primary" data-es="Solicitar Información" data-en="Request Info">Solicitar Información</a>
             </article>
 
             <article class="card card-worker">
@@ -96,99 +124,317 @@
                     <div class="card-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">work</span>
                     </div>
-                    <h3>Do you want to join the team?</h3>
-                    <p>Work as a professional caregiver or nurse. We offer flexible schedules, ongoing training, and a supportive work environment.</p>
+                    <h3 data-es="¿Quieres unirte al equipo?" data-en="Want to join the team?">¿Quieres unirte al equipo?</h3>
+                    <p data-es="Trabaja como cuidador profesional o enfermero. Ofrecemos horarios flexibles, capacitación constante y un excelente ambiente laboral." data-en="Work as a professional caregiver or nurse. We offer flexible hours, ongoing training, and a supportive work environment.">
+                        Trabaja como cuidador profesional o enfermero. Ofrecemos horarios flexibles, capacitación constante y un excelente ambiente laboral.
+                    </p>
                 </div>
-                <a href="contact.html" class="btn btn-card-secondary">I want to apply</a>
+                <a href="contact.html" class="btn btn-card-secondary" data-es="Postularme Ahora" data-en="Apply Now">Postularme Ahora</a>
             </article>
-            
         </section>
 
+        <!-- SECCIÓN DE SERVICIOS - CARRUSEL INTERACTIVO -->
         <section class="services-section" aria-labelledby="services-title">
-            <div class="title">
-                <h2 id="services-title">Our Featured Services</h2>
+            <div class="services-header">
+                <div>
+                    <h2 id="services-title" data-es="Nuestros servicios destacados" data-en="Our Featured Services">Nuestros servicios destacados</h2>
+                    <p class="services-subtitle" data-es="Explora nuestras opciones de cuidado personalizado" data-en="Explore our personalized care options">Explora nuestras opciones de cuidado personalizado</p>
+                </div>
+                <div class="carousel-controls">
+                    <button id="carousel-prev" class="carousel-btn" aria-label="Servicios anteriores">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button id="carousel-next" class="carousel-btn" aria-label="Servicios siguientes">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
             </div>
 
-            <div class="services-grid">
-                
+            <div id="services-carousel" class="services-carousel-track">
+                <!-- Tarjeta 1 -->
                 <article class="card card-information">
-                    <div class="card-icon">
-                        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">person</span>
+                        </div>
+                        <h3 data-es="Asistencia Diaria" data-en="Daily Assistance">Asistencia Diaria</h3>
+                        <p data-es="Apoyo personalizado en las tareas diarias del hogar, higiene personal, preparación de alimentos y compañía constante." data-en="Personalized support with daily household activities, personal hygiene, meal preparation, and constant companionship.">
+                            Apoyo personalizado en las tareas diarias del hogar, higiene personal, preparación de alimentos y compañía constante.
+                        </p>
                     </div>
-                    <h3>Daily attendance</h3>
-                    <p>Personalized support in daily household activities, personal hygiene, meals, and constant companionship.</p>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </article>
 
+                <!-- Tarjeta 2 -->
                 <article class="card card-information">
-                    <div class="card-icon">
-                        <span class="material-symbols-outlined" aria-hidden="true">star</span>
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">star</span>
+                        </div>
+                        <h3 data-es="Cuidado Especializado" data-en="Specialized Care">Cuidado Especializado</h3>
+                        <p data-es="Enfermeros capacitados para control de medicamentos, monitoreo de signos vitales y atención médica preventiva en casa." data-en="Trained nurses for medication management, vital signs monitoring, and preventive healthcare in the comfort of home.">
+                            Enfermeros capacitados para control de medicamentos, monitoreo de signos vitales y atención médica preventiva en casa.
+                        </p>
                     </div>
-                    <h3>Specialized Care</h3>
-                    <p>Nurses trained in medication management, vital signs monitoring, and preventive healthcare.</p>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </article>
                 
+                <!-- Tarjeta 3 -->
                 <article class="card card-information">
-                    <div class="card-icon">
-                        <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+                        </div>
+                        <h3 data-es="Soporte Emocional" data-en="Emotional Support">Soporte Emocional</h3>
+                        <p data-es="Fomentamos el bienestar mental mediante dinámicas sociales, paseos guiados y actividades recreativas de estimulación." data-en="We promote mental and emotional well-being through social dynamics, guided walks, and recreational activities.">
+                            Fomentamos el bienestar mental mediante dinámicas sociales, paseos guiados y actividades recreativas de estimulación.
+                        </p>
                     </div>
-                    <h3>Emotional support</h3>
-                    <p>We promote mental and emotional well being through social activities, guided walks, and recreational activities.</p>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </article>
-                
+
+                <!-- Tarjeta 4 -->
+                <article class="card card-information">
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">medical_services</span>
+                        </div>
+                        <h3 data-es="Atención Post-Hospitalaria" data-en="Post-Hospital Care">Atención Post-Hospitalaria</h3>
+                        <p data-es="Asistencia especializada en recuperación tras cirugías o estancias hospitalarias para garantizar un proceso seguro en hogar." data-en="Specialized recovery assistance after surgeries or hospital stays to ensure a safe and comfortable rehabilitation at home.">
+                            Asistencia especializada en recuperación tras cirugías o estancias hospitalarias para garantizar un proceso seguro en hogar.
+                        </p>
+                    </div>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
+
+                <!-- Tarjeta 5 -->
+                <article class="card card-information">
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">nightlight</span>
+                        </div>
+                        <h3 data-es="Cuidado Nocturno" data-en="Overnight Assistance">Cuidado Nocturno</h3>
+                        <p data-es="Supervisión durante toda la noche para que la familia pueda descansar sabiendo que su ser querido está seguro." data-en="Overnight monitoring and emergency assistance so your family can sleep peacefully knowing their loved one is safe.">
+                            Supervisión durante toda la noche para que la familia pueda descansar sabiendo que su ser querido está seguro.
+                        </p>
+                    </div>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
+
+                <!-- Tarjeta 6 -->
+                <article class="card card-information">
+                    <div>
+                        <div class="card-icon">
+                            <span class="material-symbols-outlined" aria-hidden="true">directions_car</span>
+                        </div>
+                        <h3 data-es="Transporte y Acompañamiento" data-en="Transportation & Escort">Transporte y Acompañamiento</h3>
+                        <p data-es="Traslado seguro y compañía a citas médicas, eventos familiares, trámites y reuniones sociales." data-en="Safe transportation and accompaniment to medical appointments, family visits, errands, and social events.">
+                            Traslado seguro y compañía a citas médicas, eventos familiares, trámites y reuniones sociales.
+                        </p>
+                    </div>
+                    <a href="services.html" class="card-action-btn" aria-label="Ver servicio">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
             </div>
         </section>
-       
+
+        <!-- ABOUT US / NUESTRA HISTORIA -->
+        <section id="about-us-section" class="about-us-wrapper">
+            <div class="about-hero" tabindex="0">
+                <div class="about-hero-content">
+                    <h1 data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h1>
+                    <p data-es="Nos dedicamos a mejorar la vida de los adultos mayores con amor, respeto y apoyo profesional." data-en="We are dedicated to improving the lives of senior citizens with love, respect, and professional support.">
+                        Nos dedicamos a mejorar la vida de los adultos mayores con amor, respeto y apoyo profesional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-story">
+                <div class="story-text">
+                    <h2 data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</h2>
+                    <p data-es="Iniciamos este proyecto entendiendo lo difícil que es encontrar el cuidado adecuado para nuestros familiares. Las familias necesitan más que ayuda médica; necesitan a alguien en quien puedan confiar plenamente." data-en="We started this project because we know that finding the right care for older family members is not easy. Families need more than just medical help; they need someone they can really trust.">
+                        Iniciamos este proyecto entendiendo lo difícil que es encontrar el cuidado adecuado para nuestros familiares. Las familias necesitan más que ayuda médica; necesitan a alguien en quien puedan confiar plenamente.
+                    </p>
+                    <p data-es="Hoy apoyamos a numerosas familias a cuidar a sus seres queridos, asegurando que se mantengan sanos, felices e independientes en su hogar." data-en="Today, we help many families look after their grandparents. We make sure they stay safe, healthy, and happy at home while keeping their independence for as long as possible.">
+                        Hoy apoyamos a numerosas familias a cuidar a sus seres queridos, asegurando que se mantengan sanos, felices e independientes en su hogar.
+                    </p>
+                </div>
+                <div class="story-image-container">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/270/042/non_2x/friendly-relationship-between-smiling-caregiver-in-uniform-and-happy-elderly-woman-supportive-young-nurse-looking-at-senior-woman-young-caring-lovely-caregiver-and-happy-ward-photo.jpg" alt="Enfermera sonriente en uniforme brindando apoyo y compañía afectuosa a una mujer adulta mayor alegre" data-es="Enfermera sonriente en uniforme brindando apoyo y compañía afectuosa a una mujer adulta mayor alegre" data-en="Smiling nurse in uniform providing support and affectionate companionship to a happy elderly woman" class="about-img" tabindex="0">
+                </div>
+            </div>
+
+            <!-- MISIÓN Y VISIÓN EN ZIGZAG -->
+            <div class="mission-vision-container">
+                <div class="mv-block">
+                    <div class="mv-image">
+                        <img src="https://img.magnific.com/fotos-premium/senior-hombre-mujer-jovenes-cuidadores-interior_392895-207230.jpg" alt="Cuidadores jóvenes ofreciendo atención y acompañamiento profesional a un adulto mayor en el hogar" data-es="Cuidadores jóvenes ofreciendo atención y acompañamiento profesional a un adulto mayor en el hogar" data-en="Young caregivers offering professional care and companionship to an elderly man at home" tabindex="0">
+                    </div>
+                    <div class="mv-content">
+                        <div class="mv-icon">
+                            <span class="material-symbols-outlined">target</span>
+                        </div>
+                        <h2 data-es="Nuestra Misión" data-en="Our Mission">Nuestra Misión</h2>
+                        <p data-es="Proporcionar servicios de atención domiciliaria de alta calidad que brinden tranquilidad a las familias y una vida cómoda y digna a las personas mayores." data-en="To provide high-quality home care services that give peace of mind to families and a comfortable, dignified life to elderly people.">
+                            Proporcionar servicios de atención domiciliaria de alta calidad que brinden tranquilidad a las familias y una vida cómoda y digna a las personas mayores.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mv-block mv-reverse">
+                    <div class="mv-content">
+                        <div class="mv-icon">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </div>
+                        <h2 data-es="Nuestra Visión" data-en="Our Vision">Nuestra Visión</h2>
+                        <p data-es="Convertirnos en la red de cuidado de adultos mayores más confiable de la región, reconocida por nuestros profesionales empáticos y servicio excelente." data-en="To become the most trusted senior care network in the region, recognized for our kind professionals and excellent service.">
+                            Convertirnos en la red de cuidado de adultos mayores más confiable de la región, reconocida por nuestros profesionales empáticos y servicio excelente.
+                        </p>
+                    </div>
+                    <div class="mv-image">
+                        <img src="https://www.grupms.es/wp-content/uploads/2025/06/a-professional-caretaker-in-uniform-helping-a-geriatric-female-p-1024x682.jpg" alt="Cuidadora profesional uniformada asistiendo con calidez a una paciente geriátrica" data-es="Cuidadora profesional uniformada asistiendo con calidez a una paciente geriátrica" data-en="Professional uniformed caregiver warmly assisting a geriatric female patient" tabindex="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- VALORES -->
+            <section class="values-wrapper">
+                <div class="values-title">
+                    <h2 data-es="Nuestros Valores Principales" data-en="Our Core Values">Nuestros Valores Principales</h2>
+                </div>
+                <div class="contenedor-cards-values">
+                    <div class="card-values">
+                        <div class="icon-box">💙</div>
+                        <h3 data-es="Empatía" data-en="Kindness">Empatía</h3>
+                        <p data-es="Tratamos a cada adulto mayor con la paciencia, cariño y profundo respeto que se merecen." data-en="We treat every person with patience, warm hearts, and the high respect they deserve.">Tratamos a cada adulto mayor con la paciencia, cariño y profundo respeto que se merecen.</p>
+                    </div>
+                    <div class="card-values">
+                        <div class="icon-box">🛡️</div>
+                        <h3 data-es="Confianza y Seguridad" data-en="Trust & Safety">Confianza y Seguridad</h3>
+                        <p data-es="Seleccionamos y capacitamos cuidadosamente a nuestro personal para garantizar la máxima seguridad en casa." data-en="We choose and train our staff very carefully so your family is always in safe hands.">Seleccionamos y capacitamos cuidadosamente a nuestro personal para garantizar la máxima seguridad en casa.</p>
+                    </div>
+                    <div class="card-values">
+                        <div class="icon-box">🏅</div>
+                        <h3 data-es="Dedicación" data-en="Dedication">Dedicación</h3>
+                        <p data-es="Trabajamos día a día para elevar nuestros estándares de asistencia médica y humana." data-en="We work hard every day to improve our daily assistance and support services.">Trabajamos día a día para elevar nuestros estándares de asistencia médica y humana.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
 
-     <footer class="main-footer">
-    <div class="footer-container">
+    <section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title" data-es="Lo que dicen las familias" data-en="What families say">
+      Lo que dicen las familias
+    </h2>
+    <p class="section-subtitle" data-es="La tranquilidad de tus seres queridos es nuestra mayor satisfacción." data-en="The peace of mind of your loved ones is our greatest satisfaction.">
+      La tranquilidad de tus seres queridos es nuestra mayor satisfacción.
+    </p>
 
-        <div class="footer-column">
-            <h3>ConnectCare</h3>
-            <p>We provide compassionate and personalized care
-                tailored to the unique needs of every individual.</p>
-        </div>
+    <div class="testimonials-carousel-wrapper">
+      <button id="testimonial-prev" class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
 
-        <div class="footer-column">
-            <h3>Useful links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </div>
+      <div class="testimonials-track" id="testimonials-track">
+        <article class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-es="&ldquo;Gracias al equipo de ConnectCare, mi mamá recibe la asistencia diaria que necesita sin perder su autonomía. La calidez del personal nos da mucha tranquilidad.&rdquo;" data-en="&ldquo;Thanks to ConnectCare, my mother gets the daily assistance she needs while keeping her independence. The warmth of the staff gives us peace of mind.&rdquo;">
+            &ldquo;Gracias al equipo de ConnectCare, mi mamá recibe la asistencia diaria que necesita sin perder su autonomía. La calidez del personal nos da mucha tranquilidad.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MF</div>
+            <div class="author-info">
+              <h4>María Fernanda G.</h4>
+              <span data-es="Hija de usuaria" data-en="Daughter of user">Hija de usuaria</span>
+            </div>
+          </div>
+        </article>
 
-           <div class="footer-column">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Testimonials</a></li>
-            </ul>
-        </div>
+        <article class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-es="&ldquo;Excelente servicio de enfermería. El control de medicamentos y seguimiento constante es impecable. Se nota el compromiso humano.&rdquo;" data-en="&ldquo;Excellent nursing service. Medication management and constant monitoring are flawless. Their human commitment really shows.&rdquo;">
+            &ldquo;Excelente servicio de enfermería. El control de medicamentos y seguimiento constante es impecable. Se nota el compromiso humano.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CM</div>
+            <div class="author-info">
+              <h4>Carlos Mendoza</h4>
+              <span data-es="Familiar de usuario" data-en="Family member">Familiar de usuario</span>
+            </div>
+          </div>
+        </article>
 
-        <div class="footer-column">
-            <h3>Follow us</h3>
-            <div class="social-links">
-                <a href="#" class="social-icon" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon" aria-label="Twitter">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="#" class="social-icon" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+        <article class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-es="&ldquo;Las dinámicas de apoyo emocional y acompañamiento le devolvieron la alegría a mi papá. Un servicio súper profesional.&rdquo;" data-en="&ldquo;The emotional support dynamics and companionship brought joy back to my father. A very professional service.&rdquo;">
+            &ldquo;Las dinámicas de apoyo emocional y acompañamiento le devolvieron la alegría a mi papá. Un servicio súper profesional.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div class="author-info">
+              <h4>Sofía Ramírez</h4>
+              <span data-es="Familiar de usuario" data-en="Family member">Familiar de usuario</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <button id="testimonial-next" class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+    </div>
+  </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>ConnectCare</h2>
+                <p data-es="Apoyo y Cuidado para Adultos Mayores" data-en="Support & Care for Seniors">Apoyo y Cuidado para Adultos Mayores</p>
+            </div>
+
+            <div class="footer-column">
+                <h3 data-es="Navegación" data-en="Navigation">Navegación</h3>
+                <ul>
+                    <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="services.html" data-es="Servicios" data-en="Services">Servicios</a></li>
+                    <li><a href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 data-es="Empresa" data-en="Company">Empresa</h3>
+                <ul>
+                    <li><a href="#about-us-section" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+                    <li><a href="testimonials.html" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 data-es="Síguenos" data-en="Follow us">Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61591905990882" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/connect_care.sv/" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
-
-    
-    <div class="footer-bottom">
-        <p>&copy; 2026 ConnectCare. All rights reserved.</p>
-    </div>
-</footer>
         
+        <div class="footer-bottom">
+            <p>&copy; 2026 ConnectCare. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <script src="index.js"></script>
 </body>
 </html>
